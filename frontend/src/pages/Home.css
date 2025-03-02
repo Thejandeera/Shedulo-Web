@@ -1,19 +1,73 @@
-
-.parent {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 8px;
-}
-    
-.div1 {
-    grid-column: span 2 / span 2;
-    grid-row: span 4 / span 4;
-}
-
-.div2 {
-    grid-column: span 2 / span 2;
-    grid-row: span 4 / span 4;
-    grid-column-start: 3;
-}
-        
+/* home.css */
+.home-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 20px;
+  }
+  
+  .card1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('/images/left.jpg');
+    padding:20px 60px;
+    border-radius: 15px;
+    width: 350px;
+    color: white;
+    text-align: center;
+  }
+  .card2 {
+    background: url('/images/right.jpg');
+    padding:20px 60px;
+    border-radius: 15px;
+    width: 350px;
+    color: white;
+    text-align: center;
+  }
+  
+   h2 {
+    font-size: 45px;
+  }
+   h2:hover {
+    transform: scale(1.05);
+  }
+  
+   ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    font-size: 20px;
+  }
+   ul:hover {
+    transform: scale(1.05);
+  }
+  p{
+    font-size: 25px;
+    text-align:start;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 0px;
+  }
+  p:hover{
+    transform: scale(1.05);
+  }
+  
+   ul li {
+    color: rgb(185, 185, 185);
+    margin: 5px 0;
+  }
+  
+  button {
+    background: rgb(206, 206, 206);
+    color: rgb(54, 54, 54);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 2px;
+    font-size: 16px;
+  }
+  button:hover {
+    cursor: pointer;
+    color: black;
+    transform: scale(1.05);
+  }
+  
