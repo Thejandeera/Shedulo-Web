@@ -1,9 +1,10 @@
 import React from 'react'
 import './Schedule.css'
+import Navbar from '../../components/Navbar'
 
 const Schedule = () => {
   return (
-    <div className='test' >Schedule</div>
+    <div><Navbar/><div className='test' >Schedule</div></div>
   )
 }
 

@@ -1,9 +1,11 @@
 import React from 'react'
 import './Categories.css'
 
+import Navbar from '../../components/Navbar'
+
 const Categories = () => {
   return (
-    <div className='test' >Categories</div>
+    <div><Navbar/><div className='test' >Categories</div></div>
   )
 }
 

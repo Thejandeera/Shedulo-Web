@@ -6,19 +6,21 @@ import {
   Route,
 } from "react-router-dom";
 import Home from "./pages/home/Home.jsx";
-import Navbar from "./components/Navbar.jsx";
 import Categories from "./pages/categories/Categories.jsx";
 import Contact from "./pages/contact/Contact.jsx";
 import Manage from "./pages/manage/Manage.jsx";
 import Schedule from "./pages/shedule/Schedule.jsx";
+import Login from "./pages/login/Login.jsx";
+import SignUp from "./pages/signup/Signup.jsx";
 
 const App = () => {
   return (
     <Router> {/* Wrap everything inside Router */}
       <ToastContainer />
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/home" element={<Home />} />
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/manage" element={<Manage />} />

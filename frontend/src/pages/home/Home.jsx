@@ -1,10 +1,13 @@
 /* Home.jsx */
 import React from "react";
 import "./Home.css";
+import Navbar from "../../components/Navbar";
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <div>
+      <Navbar/>
+      <div className="home-container">
       <div className="card1">
         <h2>Plan Your Day</h2>
         <p>
@@ -31,6 +34,7 @@ const Home = () => {
         </ul>
         <button>View Now</button>
       </div>
+    </div>
     </div>
   );
 };

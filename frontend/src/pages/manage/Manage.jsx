@@ -1,8 +1,9 @@
 import React from 'react'
+import Navbar from '../../components/Navbar'
 
 const Manage = () => {
   return (
-    <div className='test' >Manage</div>
+    <div><Navbar/><div className='test' >Manage</div></div>
   )
 }
 
