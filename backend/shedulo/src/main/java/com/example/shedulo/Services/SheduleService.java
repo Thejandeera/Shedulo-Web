@@ -34,13 +34,7 @@ public class SheduleService {
         Admins categoryy = adminsRepository.findByCategory(category)
                 .orElseThrow(() -> new RuntimeException("Category not found with category: " + category));
 
-        // Map category directly from SheduleRequest
-//        String category = sheduleRequest.getCategory();
-//        if (category != null) {
-//            admin.setCategory(category);  // Set category from SheduleRequest
-//        }
 
-        // Create a new Shedule entity
         Shedule shedule = new Shedule();
         shedule.setName(sheduleRequest.getName());
         shedule.setAge(sheduleRequest.getAge());

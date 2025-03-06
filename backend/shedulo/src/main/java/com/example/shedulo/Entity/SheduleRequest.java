@@ -7,10 +7,10 @@ public class SheduleRequest {
     private String date;
     private String time;
     private String reason;
-    private String category;  // No need to map it under authName anymore
-    private String authName;  // This is just for the admin's identifier now
+    private String category;
+    private String authName;
 
-    // Getters and setters for all fields
+
     public String getName() {
         return name;
     }
