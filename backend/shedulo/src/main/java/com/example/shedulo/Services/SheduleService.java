@@ -5,14 +5,11 @@ import com.example.shedulo.Entity.Shedule;
 import com.example.shedulo.Entity.SheduleRequest;
 import com.example.shedulo.Repositories.AdminsRepository;
 import com.example.shedulo.Repositories.SheduleRepository;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class SheduleService {
@@ -26,14 +23,24 @@ public class SheduleService {
         this.adminsRepository = adminsRepository;
     }
 
-    // Method to create a new schedule and associate it with the authenticated admin
+    // Method to create a new schedule
     public Shedule createSchedule(SheduleRequest sheduleRequest) {
-        String authName = sheduleRequest.getAuthName(); // Get authName from the request body
-
+        // Get the admin by authName
+        String authName = sheduleRequest.getAuthName();
+        String category = sheduleRequest.getCategory();
         Admins admin = adminsRepository.findByAuthName(authName)
                 .orElseThrow(() -> new RuntimeException("Admin not found with auth_name: " + authName));
 
-        // Convert SheduleRequest to Shedule entity
+        Admins categoryy = adminsRepository.findByCategory(category)
+                .orElseThrow(() -> new RuntimeException("Category not found with category: " + category));
+
+        // Map category directly from SheduleRequest
+//        String category = sheduleRequest.getCategory();
+//        if (category != null) {
+//            admin.setCategory(category);  // Set category from SheduleRequest
+//        }
+
+        // Create a new Shedule entity
         Shedule shedule = new Shedule();
         shedule.setName(sheduleRequest.getName());
         shedule.setAge(sheduleRequest.getAge());
@@ -41,16 +48,16 @@ public class SheduleService {
         shedule.setDate(LocalDate.parse(sheduleRequest.getDate()));
         shedule.setTime(LocalTime.parse(sheduleRequest.getTime()));
         shedule.setReason(sheduleRequest.getReason());
+        shedule.setCategory(categoryy);
+        shedule.setAdmin(admin);  // Set the admin
 
-        // Set the authenticated admin to the schedule
-        shedule.setAdmin(admin);
-
-        // Save and return the schedule
+        // Save the new schedule
         return sheduleRepository.save(shedule);
     }
 
+
     // Method to get all schedules
     public List<Shedule> getAllSchedules() {
-        return sheduleRepository.findAll(); // Return all schedules from the repository
+        return sheduleRepository.findAll();
     }
 }

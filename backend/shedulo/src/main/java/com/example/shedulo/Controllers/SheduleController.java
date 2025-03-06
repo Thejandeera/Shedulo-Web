@@ -22,10 +22,9 @@ public class SheduleController {
     // Endpoint to create a new schedule
     @PostMapping
     public ResponseEntity<Shedule> createShedule(@RequestBody SheduleRequest sheduleRequest) {
-        Shedule createdShedule = service.createSchedule(sheduleRequest); // Pass SheduleRequest to the service layer
-        return new ResponseEntity<>(createdShedule, HttpStatus.CREATED);
+        Shedule createdShedule = service.createSchedule(sheduleRequest);
+        return new ResponseEntity<>(createdShedule, HttpStatus.CREATED); // Return status 201 (created)
     }
-
 
     // Endpoint to get all schedules
     @GetMapping

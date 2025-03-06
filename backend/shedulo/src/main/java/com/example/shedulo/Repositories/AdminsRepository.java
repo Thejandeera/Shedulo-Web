@@ -9,5 +9,6 @@ import java.util.Optional;
 @Repository
 public interface AdminsRepository extends JpaRepository<Admins, Long> {
     Optional<Admins> findByAuthName(String authName);
+    Optional<Admins> findByCategory(String category);
 }
 
