@@ -4,6 +4,7 @@ import com.example.shedulo.Entity.Admins;
 import com.example.shedulo.Services.AdminsService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/admins")
@@ -22,5 +23,15 @@ public class AdminsController {
     @GetMapping
     public List<Admins> getAllAdmins() {
         return service.getAllAdmins();
+    }
+
+    @GetMapping("/categories")
+    public Set<String> getAllCategories() {
+        return service.getAllUniqueCategories();
+    }
+
+    @GetMapping("/authNames")
+    public Set<String> getAllAuthNames() {
+        return service.getAllUniqueAuthNames();
     }
 }

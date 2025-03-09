@@ -60,7 +60,7 @@
   input, select {
     display: block;
     width: 100%;
-    margin-top: 10px ;
+    margin-top: 20px ;
     margin-left: 10px;
     margin-right: 10px;
     padding: 15px;
@@ -73,8 +73,14 @@
     color: black;
     padding: 10px 20px;
     border-radius: 10px;
-    border: 2px solid red;
     margin-top: 20px;
     cursor: pointer;
   }
+  .submit-button:disabled {
+    background-color: #cccccc; /* Light gray */
+    color: #666666; /* Darker gray text */
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
   
