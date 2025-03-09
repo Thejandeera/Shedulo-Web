@@ -1,4 +1,80 @@
-.test{
-    padding: 40px;
+.schedule-container {
+  
     color: white;
-}
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .profile-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    gap: 0px;
+  }
+  
+  .profile-card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 120px;
+    text-align: center;
+  }
+  
+  .profile-pic {
+    background-color: gray;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  
+  .profile-info p {
+    font-size: 15px;
+    margin: 5px 0;
+  }
+  
+  .stars {
+    color: yellow;
+  }
+  
+  .form-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    
+  }
+  .h3-Schedule{
+    font-size: 30px;
+  }
+  
+  
+  .make-schedule, .selection-box {
+    align-items: center;
+    background-color: #444;
+    padding: 30px;
+    border-radius: 10px;
+    width: 40%;
+    padding-right: 70px;
+  }
+  
+  input, select {
+    display: block;
+    width: 100%;
+    margin-top: 10px ;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .submit-button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid red;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
