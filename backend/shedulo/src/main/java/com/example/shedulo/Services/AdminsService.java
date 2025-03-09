@@ -20,6 +20,7 @@ public class AdminsService {
         return repository.save(admin);
     }
 
+
     public List<Admins> getAllAdmins() {
         return repository.findAll();
     }

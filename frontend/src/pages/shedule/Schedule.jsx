@@ -32,8 +32,11 @@ const Schedule = () => {
 
     // Fetch profiles and limit to 7
     axios.get('http://localhost:8080/admins')
-      .then(response => setProfiles(response.data.slice(0, 7))) // Slice first 7 profiles
-      .catch(error => console.error('Error fetching profiles:', error));
+    .then(response => {
+      const shuffledProfiles = response.data.sort(() => 0.5 - Math.random()); // Shuffle the array randomly
+      setProfiles(shuffledProfiles.slice(0, 7)); // Slice first 7 random profiles
+    })
+    
   }, []);
 
   useEffect(() => {
@@ -51,6 +54,15 @@ const Schedule = () => {
       .catch(error => console.error('Error creating schedule:', error));
   };
 
+  // Function to render image or fallback if null
+  const renderProfilePic = (image) => {
+    if (image) {
+      return <img src={`data:image/jpeg;base64,${image}`} alt="Profile" className="profile-pic-img" />;
+    } else {
+      return <div className="profile-pic-fallback"></div>; // Gray circle fallback
+    }
+  };
+
   return (
     <div>
       <Navbar />
@@ -58,7 +70,9 @@ const Schedule = () => {
         <div className="profile-cards">
           {profiles.map((profile, index) => (
             <div key={index} className="profile-card">
-              <div className="profile-pic"></div>
+              <div className="profile-pic">
+                {renderProfilePic(profile.image)} {/* Render image or fallback */}
+              </div>
               <div className="profile-info">
                 <p>{profile.authName}</p>
                 <p>{profile.specialization}</p> {/* Role = Specialization */}

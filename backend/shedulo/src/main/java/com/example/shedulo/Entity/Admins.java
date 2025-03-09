@@ -23,4 +23,7 @@ public class Admins {
     private String specialization;
     private String institute;
     private String availability;
+
+    @Lob  // Mark the field as large object (binary data)
+    private byte[] image;  // This will store the image as byte array
 }
